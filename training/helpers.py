@@ -1,5 +1,7 @@
 from typing import Optional, Tuple, Union
 from math import floor
+import tensorflow as tf
+import numpy as np
 
 def split_data_set(
     dataset,
@@ -32,3 +34,14 @@ def split_data_set(
         return train_ds, validate_ds, test_ds
     else:
         return train_ds, test_ds
+
+def predict(model, img, class_names):
+    img_array = tf.keras.preprocessing.image.img_to_array(img)
+    img_array = tf.expand_dims(img_array, 0)
+    
+    predictions = model.predict(img_array)
+    
+    predicted_class = class_names[np.argmax(predictions[0])]
+    confidence = round(100 * (np.max(predictions)), 2)
+    
+    return predicted_class, confidence
