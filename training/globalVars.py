@@ -1,1 +1,15 @@
-DATASET_DIRECTORY="PlantVillage"
+DATASET_DIRECTORY="../../PlantVillage"
+
+IMAGE_SIZE=256
+
+BATCH_SIZE=32
+
+CHANNELS=3
+
+EPOCHS=50 # how much time model loops on the data
+
+TRAINING_SIZE=0.8
+
+SHUFFLE_SIZE=1000
+
+SEED=200
