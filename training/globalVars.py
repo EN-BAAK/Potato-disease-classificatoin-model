@@ -1,12 +1,14 @@
 DATASET_DIRECTORY="../../PlantVillage"
 
+GENERATOR_DATASET_DIRECTORY="../../dataset"
+
 IMAGE_SIZE=256
 
 BATCH_SIZE=32
 
 CHANNELS=3
 
-EPOCHS=50 # how much time model loops on the data
+EPOCHS=50
 
 TRAINING_SIZE=0.8
 
